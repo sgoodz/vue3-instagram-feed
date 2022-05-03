@@ -1,12 +1,14 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from "vue";
+import InstagramGallery from "./components/InstagramGallery.vue";
+console.log(import.meta.env.VITE_ACCESS_KEY);
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <InstagramGallery
+    :count="24"
+    accessToken="{{import.meta.env.VITE_ACCESS_KEY}}"
+  />
 </template>
 
 <style>
