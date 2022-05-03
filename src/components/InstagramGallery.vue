@@ -1,53 +1,50 @@
 <script setup>
-//imports
 import { ref, onMounted } from "vue";
+import axios from "axios";
 
-//prop definition
 const props = defineProps({
   accessToken: String,
   count: Number,
   pagination: Boolean,
 });
 
-//register state
-const loading = ref(true);
-const error = ref(false);
+const isLoading = ref(true);
+const hasError = ref(false);
 const instagramData = ref(null);
 const usePagination = ref(false);
 const paginationNextUrl = ref("");
 const paginationPrevUrl = ref("");
 
-//main fetch function
-const fetchInstagramData = async (url) => {
-  console.log(props.accessToken);
-  fetch(url)
+onMounted(() => {
+  const url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&limit=${props.count}&access_token=${props.accessToken}`;
+  axios
+    .get(url)
     .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log({ data });
-      if (data.hasOwnProperty("error")) {
-        loading = false;
-        error = true;
+      console.log(response);
+      if (response.hasOwnProperty("error")) {
+        isLoading.value = false;
+        hasError.value = true;
       } else {
-        instagramData = data;
-        loading = false;
+        instagramData.value = response.data;
+        console.log(instagramData._rawValue);
+        isLoading.value = false;
       }
     })
     .catch((error) => {
       console.log("Error:", error);
-      error = true;
-      loading = false;
+      hasError.value = true;
+      isLoading.value = false;
     });
-};
-
-fetchInstagramData(
-  `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&limit=${props.count}&access_token=${props.accessToken}`
-);
+});
 </script>
 
 <template>
   <h1>INSTAGRAM GALLERY</h1>
+  <div>
+    <h1 v-if="isLoading != false">LOADING...</h1>
+    <h1 v-if="hasError != false">Ooops, something went wrong.</h1>
+    <h1 v-else>{{ instagramData }}</h1>
+  </div>
 </template>
 
 <style></style>
