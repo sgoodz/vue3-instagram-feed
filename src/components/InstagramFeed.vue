@@ -58,14 +58,14 @@ const handlePaginationPrev = () => {
 </script>
 
 <template>
-  <div class="container">
+  <div class="instagram-wrapper">
     <h1 v-if="isLoading">LOADING...</h1>
     <h1 v-else="hasError">Ooops, something went wrong.</h1>
-    <div v-else class="gallery">
+    <div v-else class="instagram-gallery">
       <div
         v-for="image in instagramData.data"
         :key="image.id"
-        class="gallery-item"
+        class="instagram-gallery-item"
       >
         <a
           :href="image.permalink"
@@ -81,9 +81,9 @@ const handlePaginationPrev = () => {
             :src="image.media_url"
             :alt="image.caption"
             :key="image.id"
-            class="gallery-image"
+            class="instagram-gallery-image"
           />
-          <video v-else :key="image.id" class="gallery-image">
+          <video v-else :key="image.id" class="instagram-gallery-image">
             <source :src="image.media_url" type="video/mp4" />
           </video>
         </a>
@@ -105,25 +105,25 @@ const handlePaginationPrev = () => {
 </template>
 
 <style scoped>
-.container {
+.instagram-wrapper {
   max-width: 93.5rem;
   margin: 0 auto;
   padding: 0 2rem;
 }
-.gallery {
+.instagram-gallery {
   display: flex;
   flex-wrap: wrap;
   margin: -1rem, -1rem;
   padding-bottom: 3rem;
 }
-.gallery-item {
+.instagram-gallery-item {
   position: relative;
   flex: 1 0 22rem;
   margin: 1rem;
   color: #fff;
   cursor: pointer;
 }
-.gallery-image {
+.instagram-gallery-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
