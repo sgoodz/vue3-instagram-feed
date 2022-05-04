@@ -19,7 +19,6 @@ const fetchInstaData = (url) => {
   axios
     .get(url)
     .then((response) => {
-      console.log(response);
       if (response.hasOwnProperty("error")) {
         isLoading.value = false;
         hasError.value = true;
@@ -59,7 +58,6 @@ const handlePaginationPrev = () => {
 </script>
 
 <template>
-  <h1>VUE3 INSTAGRAM GALLERY</h1>
   <div class="container">
     <h1 v-if="isLoading">LOADING...</h1>
     <h1 v-else="hasError">Ooops, something went wrong.</h1>
@@ -106,7 +104,7 @@ const handlePaginationPrev = () => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .container {
   max-width: 93.5rem;
   margin: 0 auto;
