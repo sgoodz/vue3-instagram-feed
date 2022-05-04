@@ -1,7 +1,21 @@
-# Vue 3 + Vite
+# Vue 3 Instagram Feed/Gallery
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![MIT](https://img.shields.io/badge/license-MIT-green)
 
-## Recommended IDE Setup
+A Vue 3 component that displays a basic Instagram feed using a Facebook Access Token.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Installation
+
+```
+yarn add vue3-instagram-feed
+
+OR
+
+npm install vue3-instagram-feed
+```
+
+## Usage
+
+### Simple Usage
+
+To display a simple gallery with a set number of images
