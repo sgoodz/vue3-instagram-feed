@@ -1,11 +1,11 @@
 <script setup>
-import InstagramGallery from "./components/InstagramGallery.vue";
+import InstagramFeed from "./components/InstagramFeed.vue";
 </script>
 
 <template>
-  <InstagramGallery
-    :count="5"
-    accessToken="IGQVJXREN4ZA1VZARXItZAGphaXpwb2tObWk4S1NQbTlCczMzWHV4X2xYVjYtTHM5VngwNjdUZAF9ORjFLTmc0SDdhRTZARTGVWR3ZAvZAHAwVWQweVJSczE0M3ZAzRVM0T210NzVOb0NVMU1Ua3MwN0pJZA3U5VwZDZD"
+  <InstagramFeed
+    :count="10"
+    accessToken="<your token here>"
     :pagination="true"
   />
 </template>
