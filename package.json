@@ -1,6 +1,7 @@
 {
   "name": "vue3-instagram-feed",
-  "version": "0.1.2",
+  "files": ["dist"],
+  "version": "0.1.4",
   "description": "A Vue 3 component to display a users Instagram posts using Instagram Basic Graph API",
   "author": "Saul Gooding",
   "license": "MIT",
