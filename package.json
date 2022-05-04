@@ -1,6 +1,10 @@
 {
   "name": "vue3-instagram-feed",
-  "version": "0.0.1",
+  "version": "0.1.2",
+  "description": "A Vue 3 component to display a users Instagram posts using Instagram Basic Graph API",
+  "author": "Saul Gooding",
+  "license": "MIT",
+  "repository": "https://github.com/sgoodz/vue3-instagram-feed.git",
   "main": "./dist/umd.js",
   "module": "./dist/es.js",
   "exports": {
@@ -10,6 +14,18 @@
     },
     "./dist/style.css": "./dist/style.css"
   },
+  "keywords": [
+    "vue 3",
+    "vuejs",
+    "instagram",
+    "instagram-api",
+    "instagram-feed",
+    "vue-component",
+    "instagram-gallery",
+    "facebook",
+    "facebook-api",
+    "graphapi"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
