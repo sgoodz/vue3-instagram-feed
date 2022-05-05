@@ -1,7 +1,7 @@
 # Vue 3 Instagram Feed/Gallery
 
 ![MIT](https://img.shields.io/badge/license-MIT-green)
-![v0.1.2](https://img.shields.io/badge/release-v0.1.2-blue)
+![v0.1.4](https://img.shields.io/badge/release-v0.1.4-blue)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 A Vue 3 component that displays a basic Instagram feed using Instagram Basic Graph API and your Facebook access token.
