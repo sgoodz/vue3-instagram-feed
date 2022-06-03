@@ -6,12 +6,14 @@ const props = defineProps({
   accessToken: String,
   count: Number,
   pagination: Boolean,
+  caption: Boolean,
 });
 
 const isLoading = ref(true);
 const hasError = ref(false);
 const instagramData = ref(null);
 const usePagination = ref(false);
+const showCaption = ref(false);
 const paginationNextUrl = ref("");
 const paginationPrevUrl = ref("");
 
@@ -34,6 +36,9 @@ const fetchInstaData = (url) => {
     .then(() => {
       if (props.pagination) {
         usePagination.value = props.pagination;
+      }
+      if( props.caption){
+        showCaption.value = props.caption;
       }
     })
     .catch((error) => {
@@ -87,6 +92,7 @@ const handlePaginationPrev = () => {
             <source :src="image.media_url" type="video/mp4" />
           </video>
         </a>
+        <span v-if="showCaption" class="instagram-caption">{{ image.caption }}</span>
       </div>
     </div>
     <div v-if="usePagination">
@@ -125,7 +131,11 @@ const handlePaginationPrev = () => {
 }
 .instagram-gallery-image {
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
+}
+.instagram-caption {
+  color: black;
+  margin-top: -3px;
 }
 </style>
