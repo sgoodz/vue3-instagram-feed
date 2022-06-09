@@ -27,6 +27,7 @@ Props:
 - `accessToken`: Required.
 - `count`: Required. Defines the number of images.
 - `pagination`: Optional. Takes a boolean.
+- `caption`: Optional. Takes a boolean.
 
 ```html
 <template>
@@ -34,6 +35,7 @@ Props:
     :count="12"
     accessToken="<your token here>"
     :pagination="true"
+    :caption="true"
   />
 </template>
 ```
