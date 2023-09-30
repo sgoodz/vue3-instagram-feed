@@ -88,7 +88,7 @@ const handlePaginationPrev = () => {
             :key="image.id"
             class="instagram-gallery-image"
           />
-          <video v-else :key="image.id" class="instagram-gallery-image">
+          <video v-else :key="image.id" class="instagram-gallery-image" autoplay>
             <source :src="image.media_url" type="video/mp4" />
           </video>
         </a>
