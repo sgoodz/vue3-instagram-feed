@@ -65,7 +65,7 @@ const handlePaginationPrev = () => {
 <template>
   <div class="instagram-wrapper">
     <h1 v-if="isLoading">LOADING...</h1>
-    <h1 v-else="hasError">Ooops, something went wrong.</h1>
+    <h1 v-else-if="hasError">Ooops, something went wrong.</h1>
     <div v-else class="instagram-gallery">
       <div
         v-for="image in instagramData.data"
