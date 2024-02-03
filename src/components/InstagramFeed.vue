@@ -7,6 +7,7 @@ const props = defineProps({
   count: Number,
   pagination: Boolean,
   caption: Boolean,
+  autoplay: Boolean,
 });
 
 const isLoading = ref(true);
@@ -14,6 +15,7 @@ const hasError = ref(false);
 const instagramData = ref(null);
 const usePagination = ref(false);
 const showCaption = ref(false);
+const autoplayVideos = ref(false);
 const paginationNextUrl = ref("");
 const paginationPrevUrl = ref("");
 
@@ -88,6 +90,9 @@ const handlePaginationPrev = () => {
             :key="image.id"
             class="instagram-gallery-image"
           />
+          <video v-else-if="autoplayVideos" :key="image.id" class="instagram-gallery-image" autoplay>
+            <source :src="image.media_url" type="video/mp4" />
+          </video>
           <video v-else :key="image.id" class="instagram-gallery-image">
             <source :src="image.media_url" type="video/mp4" />
           </video>
