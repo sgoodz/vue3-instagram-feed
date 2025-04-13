@@ -28,6 +28,7 @@ Props:
 - `count`: Required. Defines the number of images.
 - `pagination`: Optional. Takes a boolean.
 - `caption`: Optional. Takes a boolean.
+- `autoplay`: Optional. Takes a boolean.
 
 ```html
 <template>
@@ -36,6 +37,7 @@ Props:
     accessToken="<your token here>"
     :pagination="true"
     :caption="true"
+    :autoplay="true"
   />
 </template>
 ```
